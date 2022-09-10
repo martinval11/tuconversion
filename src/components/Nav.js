@@ -9,7 +9,7 @@ const Nav = () => {
         id='navbar-desktop'>
         <div className='container-fluid'>
           <a className='navbar-brand' href='#'>
-            TuConversión
+            <img src='img/favicon.png' alt='TuConversión Logo'/> <span>TuConversión</span>
           </a>
           <button
             className='navbar-toggler'
@@ -76,7 +76,7 @@ const Nav = () => {
       <nav className='navbar navbar-dark bg-dark fixed-top' id='navbar-mobile'>
         <div className='container-fluid'>
           <a className='navbar-brand' href='#'>
-            TuConversión
+            <img src='img/favicon.png' alt='TuConversión Logo'/> <span>TuConversión</span>
           </a>
           <button
             className='navbar-toggler'
