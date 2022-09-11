@@ -158,6 +158,12 @@ footer {
   --bs-offcanvas-bg: #222;
 }
 
+@media screen and (min-width: 950px) {
+  .div2 {
+    margin-bottom: 15px;
+  }
+}
+
 @media screen and (max-width: 950px) {
   h1 {
     padding: 60px 6px 3px;
@@ -169,10 +175,6 @@ footer {
 
   .div1, .div2 {
     margin-top: 15px;
-  }
-
-  .div2 {
-    margin-bottom: 15px;
   }
 
   #navbar-desktop {
