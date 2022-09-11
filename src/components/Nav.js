@@ -145,7 +145,7 @@ const Nav = () => {
                 </li>
                 <li className='nav-item'>
                   <a href='/zettabyte' className='nav-link active'>
-                    Conversión de Yottabytes
+                    Conversión de Zettabytes
                   </a>
                 </li>
               </ul>
