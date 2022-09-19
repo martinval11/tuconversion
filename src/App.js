@@ -6,9 +6,14 @@ const App = () => {
   const convertKb = () => {
     let inputToConvert = document.querySelector('#val');
 
-    if (inputToConvert.value === null) {
-      alert('Debes ingresar un número.');
+    let alertMessage = document.querySelector('#alert');
+    if (inputToConvert.value === '') {
+      alertMessage.style.display = 'inherit';
+      setTimeout(() => {
+        alertMessage.style.display = 'none';
+      }, 4500);
     } else {
+      alertMessage.style.display = 'none';
       let inputToBT = parseFloat(inputToConvert.value) * 1024 * 1024;
       document
         .querySelector('#bits')
@@ -84,16 +89,22 @@ const App = () => {
                 />
               </div>
 
-              <button
-                className='btn btn-success'
-                type='button'
-                id='convert'
-                onClick={(evt) => {
-                  convertKb();
-                  evt.preventDefault();
-                }}>
-                Convertir
-              </button>
+              <div className='contain'>
+                <button className='btn btn-danger' id='alert'>
+                  Debes ingresar un número.
+                </button>
+
+                <button
+                  className='btn btn-success'
+                  type='button'
+                  id='convert'
+                  onClick={(evt) => {
+                    convertKb();
+                    evt.preventDefault();
+                  }}>
+                  Convertir
+                </button>
+              </div>
             </label>
           </form>
           <HowToCalc isKB isDesktop='true' />

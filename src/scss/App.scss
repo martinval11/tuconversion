@@ -16,10 +16,6 @@ label {
   display: inherit;
 }
 
-#convert {
-  margin-left: 10px;
-}
-
 code {
   color: #198754;
 }
@@ -50,6 +46,10 @@ code {
 
   a {
     color: #fff !important;
+
+    &:hover {
+      color: #ddd !important;
+    }
   }
 
   .nav-item a::before {
@@ -69,8 +69,15 @@ main {
   margin-top: 2px;
 }
 
-#true, #false {
+#true, #false, #alert {
   display: none;
+}
+
+#alert {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+  pointer-events: none;
 }
 
 .navbar {
@@ -195,5 +202,47 @@ footer {
 @media screen and (max-width: 600px) {
   #false {
     display: inherit;
+  }
+}
+
+// Dark Theme
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #212529;
+    color: #EEE;
+  }
+
+  .parent div {
+    background: #2a3035;
+    border-color: #3a4249 !important;
+  }
+
+  .input-group-text {
+    background: #414a52;
+    color: #eee;
+    border-color: #56616b !important;
+  }
+
+  input {
+    background: #414a52 !important;
+    color: #eee !important;
+    border-color: #56616b !important;
+  }
+
+  code {
+    color: #0ddb7b;
+  }
+
+  #type-data {
+    color: #eee !important;
+  }
+
+  ::-webkit-input-placeholder { /* Edge */
+    color: #a5a5a5 !important;
+  }
+
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #a5a5a5 !important;
   }
 }

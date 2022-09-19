@@ -4,54 +4,86 @@ import separator from '../functions/separator';
 import HowToCalc from '../components/HowToCalc';
 
 const ConvertJB = () => {
-  // const [visibility, setVisibility] = useState(false);
   const convertzettabytes = () => {
     let inputToConvert = document.querySelector('#val');
 
-    let inputToBits = parseFloat(inputToConvert.value) * 1024 * 1024 * 1024 * 1024 * 1024 * 1024 * 1024 * 1024;
-    document.querySelector('#bits').setAttribute('value', separator(inputToBits) + ' Bits');
+    let alertMessage = document.querySelector('#alert');
+    if (inputToConvert.value === '') {
+      alertMessage.style.display = 'inherit';
+      setTimeout(() => {
+        alertMessage.style.display = 'none';
+      }, 4500);
+    } else {
+      alertMessage.style.display = 'none';
+      let inputToBits =
+        parseFloat(inputToConvert.value) *
+        1024 *
+        1024 *
+        1024 *
+        1024 *
+        1024 *
+        1024 *
+        1024 *
+        1024;
+      document
+        .querySelector('#bits')
+        .setAttribute('value', separator(inputToBits) + ' Bits');
 
-    let inputToB = parseFloat(inputToConvert.value) * 1024 * 1024 * 1024 * 1024 * 1024 * 1024 * 1024;
-    document.querySelector('#bytes').setAttribute('value', inputToB + ' B');
+      let inputToB =
+        parseFloat(inputToConvert.value) *
+        1024 *
+        1024 *
+        1024 *
+        1024 *
+        1024 *
+        1024 *
+        1024;
+      document.querySelector('#bytes').setAttribute('value', inputToB + ' B');
 
-    let inputToKB = parseFloat(inputToConvert.value) * 1024 * 1024 * 1024 * 1024 * 1024 * 1024;
-    document
-      .querySelector('#kilobytes')
-      .setAttribute('value', inputToKB + ' KB');
+      let inputToKB =
+        parseFloat(inputToConvert.value) *
+        1024 *
+        1024 *
+        1024 *
+        1024 *
+        1024 *
+        1024;
+      document
+        .querySelector('#kilobytes')
+        .setAttribute('value', inputToKB + ' KB');
 
-    let inputToMB = parseFloat(inputToConvert.value) * 1024 * 1024 * 1024 * 1024 * 1024;
-    document
-      .querySelector('#megabytes')
-      .setAttribute('value', inputToMB + ' MB');
+      let inputToMB =
+        parseFloat(inputToConvert.value) * 1024 * 1024 * 1024 * 1024 * 1024;
+      document
+        .querySelector('#megabytes')
+        .setAttribute('value', inputToMB + ' MB');
 
-    let inputToGB = parseFloat(inputToConvert.value) * 1024 * 1024 * 1024 * 1024;
-    document
-      .querySelector('#gigabytes')
-      .setAttribute('value', inputToGB + ' GB');
+      let inputToGB =
+        parseFloat(inputToConvert.value) * 1024 * 1024 * 1024 * 1024;
+      document
+        .querySelector('#gigabytes')
+        .setAttribute('value', inputToGB + ' GB');
 
-    let inputToTB = parseFloat(inputToConvert.value) * 1024 * 1024 * 1024;
-    document
-      .querySelector('#terabytes')
-      .setAttribute('value', inputToTB + ' TB');
+      let inputToTB = parseFloat(inputToConvert.value) * 1024 * 1024 * 1024;
+      document
+        .querySelector('#terabytes')
+        .setAttribute('value', inputToTB + ' TB');
 
-    let inputToPB =
-      parseFloat(inputToConvert.value) * 1024 * 1024;
-    document
-      .querySelector('#petabytes')
-      .setAttribute('value', inputToPB + ' PB');
+      let inputToPB = parseFloat(inputToConvert.value) * 1024 * 1024;
+      document
+        .querySelector('#petabytes')
+        .setAttribute('value', inputToPB + ' PB');
 
-    let inputToEB =
-      parseFloat(inputToConvert.value) * 1024;
-    document
-      .querySelector('#exabytes')
-      .setAttribute('value', inputToEB + ' EB');
+      let inputToEB = parseFloat(inputToConvert.value) * 1024;
+      document
+        .querySelector('#exabytes')
+        .setAttribute('value', inputToEB + ' EB');
 
-    let inputToZB =
-      parseFloat(inputToConvert.value) /
-      1024;
-    document
-      .querySelector('#zettabytes')
-      .setAttribute('value', inputToZB + ' ZB');
+      let inputToZB = parseFloat(inputToConvert.value) / 1024;
+      document
+        .querySelector('#zettabytes')
+        .setAttribute('value', inputToZB + ' ZB');
+    }
   };
 
   return (
@@ -81,16 +113,21 @@ const ConvertJB = () => {
                 <span id='type-data'>ZB</span>
               </div>
 
-              <button
-                className='btn btn-success'
-                type='button'
-                id='convert'
-                onClick={(evt) => {
-                  convertzettabytes();
-                  evt.preventDefault();
-                }}>
-                Convertir
-              </button>
+              <div className='contain'>
+                <button className='btn btn-danger' id='alert'>
+                  Debes ingresar un número.
+                </button>
+                <button
+                  className='btn btn-success'
+                  type='button'
+                  id='convert'
+                  onClick={(evt) => {
+                    convertzettabytes();
+                    evt.preventDefault();
+                  }}>
+                  Convertir
+                </button>
+              </div>
             </label>
           </form>
           <HowToCalc isZB isDesktop='true' />
